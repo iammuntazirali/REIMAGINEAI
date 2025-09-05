@@ -10,29 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@tailwindcss/vite": "^4.1.13",
     "firebase": "^12.2.1",
     "framer-motion": "^11.11.17",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^6.26.2"
-=======
-    "@popperjs/core": "^2.11.8",
-    "@tailwindcss/vite": "^4.1.13",
-    "axios": "^1.11.0",
-    "bootstrap": "^5.3.8",
-    "framer-motion": "^12.23.12",
-    "gsap": "^3.13.0",
-    "lucide-react": "^0.542.0",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "react-router-dom": "^7.8.2"
->>>>>>> 28480848ffb3f415cfb3ea3b9901bb587ccbb261
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
-    "@tailwindcss/postcss": "^4.1.13",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react": "^5.0.0",
