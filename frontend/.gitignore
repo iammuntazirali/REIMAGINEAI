@@ -1,3 +1,70 @@
+<<<<<<< HEAD
+# ---------------------------
+# Python
+# ---------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.pickle
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Jupyter / IPython
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ---------------------------
+# Node.js
+# ---------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ---------------------------
+# Environment & Config
+# ---------------------------
+.env
+*.env.local
+environment.yml
+
+# ---------------------------
+# Archives
+# ---------------------------
+*.zip
+*.tar
+*.tar.gz
+*.rar
+
+# ---------------------------
+# OS Files
+# ---------------------------
+.DS_Store
+Thumbs.db
+
+# ---------------------------
+# Project-specific
+# ---------------------------
+# Trained models (large binary files, keep them local)
+ai_models/trained_models/*
+!ai_models/trained_models/.gitkeep
+
+# Datasets (keep data local, avoid pushing large files)
+ai_models/datasets/*
+
+# Logs
+*.log
+
+# Temporary
+archive/
+tech_support/
+=======
 # Logs
 logs
 *.log
@@ -22,3 +89,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+>>>>>>> 84389e6 (updatelanding pag)
