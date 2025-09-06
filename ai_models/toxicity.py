@@ -64,24 +64,33 @@ class ThreadRequest(BaseModel):
 threshold = 0.6
 
 @app.post("/check_thread_toxicity/")
-
 def check_thread_toxicity(req: ThreadRequest):
-    
     comments = [line.strip() for line in req.text.split('\n') if line.strip()]
 
-    flagged_comments = []
+    mid_toxicity_comments = []
+    high_toxicity_comments = []
     for comment in comments:
-
         score = get_toxicity(comment)
-        flagged = score >= threshold
-        
-        flagged_comments.append({
-            'comment': comment,
-            'toxicity_score': score,
-            'flagged_status': flagged
+
+        if 0.4 <= score < 0.6:
+            mid_toxicity_comments.append({
+                'comment': comment,
+                'toxicity_score': score,
+                'flagged_status': True
             })
-   
-    return {"results": flagged_comments}
+        elif score >= 0.6:
+            high_toxicity_comments.append({
+                'comment': comment,
+                'toxicity_score': score,
+                'flagged_status': True
+            })
+
+    
+    return {
+        "mid_toxicity_comments": mid_toxicity_comments,
+        "high_toxicity_comments": high_toxicity_comments
+    }
+
 
 
     
