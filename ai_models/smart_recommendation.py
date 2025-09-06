@@ -24,13 +24,12 @@ class RecommendationRequest(BaseModel):
     top_k: int = 5  
 
 
-@app.post("/recommend")
-def recommend(req: RecommendationRequest):
+def recommend_posts(inputs: List[str], top_k: int = 5):
     results = []
-    for input_text in req.inputs:
+    for input_text in inputs:
         query_emb = model.encode(input_text, convert_to_tensor=True)
         cos_scores = util.cos_sim(query_emb, candidate_embeddings)[0]
-        top_results = cos_scores.topk(req.top_k)
+        top_results = cos_scores.topk(top_k)
         recommendations = [
             {"comment": candidate_texts[idx], "score": float(top_results.values[i])}
             for i, idx in enumerate(top_results.indices)

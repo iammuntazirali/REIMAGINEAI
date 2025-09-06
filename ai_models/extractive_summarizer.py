@@ -8,8 +8,8 @@ extractive_model = Summarizer()
 # 2) Abstractive summarizer pipeline
 abstractive_pipeline = pipeline(
     "summarization",
-    model="facebook/bart-large-cnn",
-    tokenizer="facebook/bart-large-cnn",
+    model="sshleifer/distilbart-cnn-12-6",
+    tokenizer="sshleifer/distilbart-cnn-12-6",
     device=0  # GPU if available
 )
 
