@@ -81,7 +81,7 @@ function Landing() {
 
       <section id="showcase" className="section">
         <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
-          Crafted with intention
+          Intelligent AI Solutions
         </motion.h2>
         <motion.div
           className="cards"
@@ -93,12 +93,25 @@ function Landing() {
             visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.12 } }
           }}
         >
-          {["Generative Studio", "Prompt Orchestrator", "Realtime Render"].map((title, i) => (
-            <motion.div key={title} className="card feature" variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }}>
+          {[
+            {
+              title: "Toxicity Detection",
+              description: "Advanced AI models detect and blur harmful content, creating safer online communities through real-time content moderation."
+            },
+            {
+              title: "Smart Summarization", 
+              description: "Intelligent content summarization that extracts key insights from lengthy posts and discussions for quick comprehension."
+            },
+            {
+              title: "Content Recommendations",
+              description: "Personalized AI-powered recommendations that surface relevant content based on user interests and engagement patterns."
+            }
+          ].map((feature, i) => (
+            <motion.div key={feature.title} className="card feature" variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }}>
               <div className="card-inner">
                 <div className="badge">0{i+1}</div>
-                <h3>{title}</h3>
-                <p>Beautifully smooth interactions, purposeful motion, and a focus on craft.</p>
+                <h3>{feature.title}</h3>
+                <p>{feature.description}</p>
               </div>
             </motion.div>
           ))}
